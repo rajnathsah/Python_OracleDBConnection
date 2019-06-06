@@ -6,7 +6,9 @@ Access Oracle database from python
 <ol>
   <li> Install cx_Oracle using pip from PyPI</li>
   Using following command cx_Oracle can be installed and upgraded. </br>
-  `pip install cx_Oracle --upgrade`
+  ```python
+  pip install cx_Oracle --upgrade
+  ```
   <li></li>
 </ol>
 
