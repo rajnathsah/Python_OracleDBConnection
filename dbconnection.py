@@ -1,3 +1,4 @@
+# Import cx_Oracle
 import cx_Oracle
 
 ''' get_connection method to connect to oracle and return connection object.
