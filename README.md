@@ -1,2 +1,6 @@
-# Python_OracleDBConnection
-Oracle database connectivity from Python
+# Python Oracle Database Connection
+Access Oracle database from python
+
+## Pre-requisite for accessing oracle database from python
+
+
