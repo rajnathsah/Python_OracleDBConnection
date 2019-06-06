@@ -7,4 +7,8 @@ Access Oracle database from python
   ```python 
   pip install cx_Oracle --upgrade
   ```
-2. Install Oracle client or Oracle instant client if Oracle client is not installed on the machine accessing database where python is intended to run. Download an Oracle 18, 12, or 11.2 “Basic” or “Basic Light” zip file: [64-bit](https://www.oracle.com/technetwork/topics/winx64soft-089540.html) or [32-bit](https://www.oracle.com/technetwork/topics/winsoft-085727.html), matching your Python architecture.
+2. Install Oracle client or Oracle instant client if Oracle client is not installed on the machine accessing database where python is intended to run. 
+#### Oracle instance client installation
+Download an Oracle 18, 12, or 11.2 “Basic” or “Basic Light” zip file: [64-bit](https://www.oracle.com/technetwork/topics/winx64soft-089540.html) or [32-bit](https://www.oracle.com/technetwork/topics/winsoft-085727.html), matching your Python architecture.
+
+Extract zip file to any location and update environment variable by including the path of extracted folder.
