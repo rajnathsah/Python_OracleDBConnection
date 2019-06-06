@@ -12,4 +12,6 @@ Access Oracle database from python
   <li></li>
 </ol>
 
-
+  ```python
+  pip install cx_Oracle --upgrade
+  ```
