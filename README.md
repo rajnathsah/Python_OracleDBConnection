@@ -11,4 +11,6 @@ Access Oracle database from python
 #### Oracle instance client installation
 Download an Oracle 18, 12, or 11.2 “Basic” or “Basic Light” zip file: [64-bit](https://www.oracle.com/technetwork/topics/winx64soft-089540.html) or [32-bit](https://www.oracle.com/technetwork/topics/winsoft-085727.html), matching your Python architecture.
 
-Extract zip file to any location and update environment variable by including the path of extracted folder.
+Extract zip file to any location and update environment variable by including the path of extracted folder.  
+
+Happy Learning!
