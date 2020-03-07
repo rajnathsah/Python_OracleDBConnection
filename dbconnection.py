@@ -25,7 +25,7 @@ def close_connection(con):
 '''
 if __name__=='__main__':
     # call connection method using database details    
-    con=get_connection('<username>', '<password>', '<database host name/ip name>', '<oracle service name>')
+    con=get_connection('<username>', '<password>', '<host>', '<service/tns name>')
     if con:
         print(con.version)
         print('Connected successfully')
@@ -36,9 +36,87 @@ if __name__=='__main__':
             sql_statement='select * from departments order by department_id'
         
             cur.execute(sql_statement)        
-        
+            # fetch record at a time by looping
             for result in cur:
-                print(result)
+                print(result)            
+            cur.close()
+            
+            cur=con.cursor()
+            cur.execute(sql_statement)    
+            # fetch one record
+            res = cur.fetchone()
+            print(res)
+            cur.close()
+            
+            cur=con.cursor()            
+            cur.execute(sql_statement)
+            # fetch many
+            res = cur.fetchmany(numRows=2)
+            print(res)
+            cur.close()
+            
+            cur=con.cursor()            
+            cur.execute(sql_statement)
+            # fetch all record at a time
+            res = cur.fetchall()
+            print(res)
+            cur.close()
+            
+            cur=con.cursor()            
+            # define arraysize to reduce network round trip
+            cur.arraysize = 100
+            cur.execute(sql_statement)
+            res = cur.fetchall()
+            print(res)
+            cur.close()
+            
+            cur=con.cursor()            
+            # bind variable to use soft parse
+            cur.prepare('select * from departments where department_id= :id')
+            cur.execute(None,{'id':210})
+            res = cur.fetchall()
+            print(res)
+            
+            cur.execute(None, {'id':110})
+            res = cur.fetchall()
+            print(res)
+            cur.close()
+                                                
+            # insert multiple rows at time to improve performance
+            rows = [(1,'first'),
+                    (2,'second'),
+                    (3,'third'),
+                    (4,'fourth'),
+                    (5,'fifth'),
+                    (6,'sixth'),
+                    (7,'seventh')]
+            
+            cur = con.cursor()
+            cur.bindarraysize = 7
+            cur.setinputsizes(int,20)
+            cur.executemany("insert into mytab(id, data) values (:1,:2)",rows)
+            con.commit()
+            cur.close()
+            
+            # query the inserted data
+            cur = con.cursor()
+            cur.execute('select * from mytab')
+            res = cur.fetchall()
+            print(res)
+            cur.close()
+            
+            # calling function with parameter and printing returned value
+            cur = con.cursor()
+            res = cur.callfunc('myfunc', cx_Oracle.NUMBER, (2,'abc'))
+            con.commit()
+            print(res)
+            cur.close()
+            
+            # calling procedure with parameter
+            cur = con.cursor()
+            res = cur.callproc('myproc',(123,'bcd'))            
+            cur.close()
+            
         except Exception as ex:
             print('Error in executing sql statement : {} '.format(ex))
         finally:
