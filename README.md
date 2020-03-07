@@ -13,6 +13,8 @@ Download an Oracle 18, 12, or 11.2 “Basic” or “Basic Light” zip file: [6
 
 Extract zip file to any location and update environment variable by including the path of extracted folder. For more details, please refer [cx_Oracle](https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html) installation document.  
 
-Another userful link from oracle on getting started with [cx_Oracle](https://developer.oracle.com/databases/database-for-python-developers-1.html) with examples.  
+Another userful link from oracle on getting started with [cx_Oracle](https://developer.oracle.com/databases/database-for-python-developers-1.html) with examples. 
+
+File dbconnection.py has example to select and insert data, it also has example of executing function and procedure from python.
 
 Happy Learning!
