@@ -17,4 +17,10 @@ Another userful link from oracle on getting started with [cx_Oracle](https://dev
 
 File dbconnection.py has example to select and insert data, it also has example of executing function and procedure from python.
 
+# Access Oracle cloud database using Python
+### Setup Oracle autonomous database 
+1. Setup always free autonomous database using [link](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-always-free.html#GUID-03F9F3E8-8A98-4792-AB9C-F0BACF02DC3E).  
+2. Follow the [link](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connecting-nodejs.html#GUID-AB1E323A-65B9-47C4-840B-EC3453F3AD53) to connect to database from python.
+3. Use cloud_databaseconnection.py sample program to test the connectivity.
+
 Happy Learning!
